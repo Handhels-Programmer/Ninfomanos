@@ -52,14 +52,40 @@ sortedItems.forEach(item => {
     item.addEventListener('click', () => {
         const mediaElement = item.querySelector('img, video').cloneNode(true);
         const fullscreenDiv = document.createElement('div');
+        const rotationControls = document.createElement('div');
 
         fullscreenDiv.classList.add('fullscreen');
+        rotationControls.classList.add('rotation-controls');
+
+        const rotateLeftButton = document.createElement('button');
+        rotateLeftButton.textContent = '⟲';
+        const rotateRightButton = document.createElement('button');
+        rotateRightButton.textContent = '⟳';
+
+        rotationControls.appendChild(rotateLeftButton);
+        rotationControls.appendChild(rotateRightButton);
+
         fullscreenDiv.appendChild(mediaElement);
+        fullscreenDiv.appendChild(rotationControls);
         document.body.appendChild(fullscreenDiv);
 
-        // Cerrar el modo de pantalla completa al hacer clic
-        fullscreenDiv.addEventListener('click', () => {
-            document.body.removeChild(fullscreenDiv);
+        let rotation = 0;
+
+        rotateLeftButton.addEventListener('click', () => {
+            rotation -= 90;
+            mediaElement.style.transform = `rotate(${rotation}deg)`;
+        });
+
+        rotateRightButton.addEventListener('click', () => {
+            rotation += 90;
+            mediaElement.style.transform = `rotate(${rotation}deg)`;
+        });
+
+        // Cerrar el modo de pantalla completa al hacer clic fuera del video/imagen
+        fullscreenDiv.addEventListener('click', (e) => {
+            if (e.target === fullscreenDiv) {
+                document.body.removeChild(fullscreenDiv);
+            }
         });
     });
 });

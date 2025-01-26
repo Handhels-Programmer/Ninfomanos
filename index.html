@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Estática</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="filters">
+            <button data-folder="all">Todos</button>
+            <button data-folder="nature">Naturaleza</button>
+            <button data-folder="events">Eventos</button>
+            <button data-folder="art">Arte</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar por nombre...">
+        </div>
+        <div class="gallery">
+            <!-- Items de ejemplo -->
+            <div class="gallery-item" data-folder="nature">
+                <img src="path/to/nature1.jpg" alt="Naturaleza 1">
+            </div>
+            <div class="gallery-item" data-folder="nature">
+                <img src="path/to/nature2.jpg" alt="Naturaleza 2">
+            </div>
+            <div class="gallery-item" data-folder="events">
+                <img src="path/to/event1.jpg" alt="Evento 1">
+            </div>
+            <div class="gallery-item" data-folder="art">
+                <img src="path/to/art1.jpg" alt="Arte 1">
+            </div>
+            <div class="gallery-item" data-folder="art">
+                <video src="path/to/art2.mp4" controls></video>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

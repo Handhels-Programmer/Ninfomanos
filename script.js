@@ -52,40 +52,56 @@ sortedItems.forEach(item => {
     item.addEventListener('click', () => {
         const mediaElement = item.querySelector('img, video').cloneNode(true);
         const fullscreenDiv = document.createElement('div');
-        const rotationControls = document.createElement('div');
-
         fullscreenDiv.classList.add('fullscreen');
-        rotationControls.classList.add('rotation-controls');
 
-        const rotateLeftButton = document.createElement('button');
-        rotateLeftButton.textContent = '⟲';
-        const rotateRightButton = document.createElement('button');
-        rotateRightButton.textContent = '⟳';
+        if (mediaElement.tagName === 'VIDEO') {
+            const playerControls = document.createElement('div');
+            playerControls.classList.add('player-controls');
 
-        rotationControls.appendChild(rotateLeftButton);
-        rotationControls.appendChild(rotateRightButton);
+            const playPauseButton = document.createElement('button');
+            playPauseButton.textContent = '▶️';
 
-        fullscreenDiv.appendChild(mediaElement);
-        fullscreenDiv.appendChild(rotationControls);
-        document.body.appendChild(fullscreenDiv);
+            const volumeSlider = document.createElement('input');
+            volumeSlider.type = 'range';
+            volumeSlider.min = 0;
+            volumeSlider.max = 1;
+            volumeSlider.step = 0.1;
+            volumeSlider.value = mediaElement.volume;
 
-        let rotation = 0;
+            const closeButton = document.createElement('button');
+            closeButton.textContent = '❌';
 
-        rotateLeftButton.addEventListener('click', () => {
-            rotation -= 90;
-            mediaElement.style.transform = `rotate(${rotation}deg)`;
-        });
+            playerControls.appendChild(playPauseButton);
+            playerControls.appendChild(volumeSlider);
+            playerControls.appendChild(closeButton);
 
-        rotateRightButton.addEventListener('click', () => {
-            rotation += 90;
-            mediaElement.style.transform = `rotate(${rotation}deg)`;
-        });
+            fullscreenDiv.appendChild(mediaElement);
+            fullscreenDiv.appendChild(playerControls);
+            document.body.appendChild(fullscreenDiv);
 
-        // Cerrar el modo de pantalla completa al hacer clic fuera del video/imagen
-        fullscreenDiv.addEventListener('click', (e) => {
-            if (e.target === fullscreenDiv) {
+            playPauseButton.addEventListener('click', () => {
+                if (mediaElement.paused) {
+                    mediaElement.play();
+                    playPauseButton.textContent = '⏸️';
+                } else {
+                    mediaElement.pause();
+                    playPauseButton.textContent = '▶️';
+                }
+            });
+
+            volumeSlider.addEventListener('input', (e) => {
+                mediaElement.volume = e.target.value;
+            });
+
+            closeButton.addEventListener('click', () => {
                 document.body.removeChild(fullscreenDiv);
-            }
-        });
+            });
+        } else {
+            fullscreenDiv.appendChild(mediaElement);
+            document.body.appendChild(fullscreenDiv);
+            fullscreenDiv.addEventListener('click', () => {
+                document.body.removeChild(fullscreenDiv);
+            });
+        }
     });
 });

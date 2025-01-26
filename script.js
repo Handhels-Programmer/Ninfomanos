@@ -6,8 +6,8 @@ const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
 // Función para ordenar los elementos por nombre de archivo
 function sortGalleryItems(items) {
     return items.sort((a, b) => {
-        const nameA = a.querySelector('img, video').getAttribute('src').toLowerCase();
-        const nameB = b.querySelector('img, video').getAttribute('src').toLowerCase();
+        const nameA = a.getAttribute('data-name').toLowerCase();
+        const nameB = b.getAttribute('data-name').toLowerCase();
         return nameA.localeCompare(nameB);
     });
 }
@@ -37,13 +37,29 @@ searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
 
     sortedItems.forEach(item => {
-        const mediaElement = item.querySelector('img, video');
-        const fileName = mediaElement.getAttribute('src').toLowerCase();
+        const name = item.getAttribute('data-name').toLowerCase();
 
-        if (fileName.includes(query)) {
+        if (name.includes(query)) {
             item.classList.remove('hidden');
         } else {
             item.classList.add('hidden');
         }
+    });
+});
+
+// Hacer que los elementos se muestren en pantalla completa al hacer clic
+sortedItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const mediaElement = item.querySelector('img, video').cloneNode(true);
+        const fullscreenDiv = document.createElement('div');
+
+        fullscreenDiv.classList.add('fullscreen');
+        fullscreenDiv.appendChild(mediaElement);
+        document.body.appendChild(fullscreenDiv);
+
+        // Cerrar el modo de pantalla completa al hacer clic
+        fullscreenDiv.addEventListener('click', () => {
+            document.body.removeChild(fullscreenDiv);
+        });
     });
 });

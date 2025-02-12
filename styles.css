@@ -83,7 +83,65 @@ body {
   }
   
 
+/* Centrar la galería en la pantalla */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Asegura que todo esté centrado en la ventana */
+  margin: 0;
+  background-color: #ffffff; /* Fondo oscuro para mejor contraste */
+  color: rgb(0, 0, 0);
+}
 
+/* Ajustar la galería */
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Espacio entre elementos */
+  max-width: 80%;
+}
+
+/* Estilizar los elementos de la galería */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.335);
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.5); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Ajustar imágenes y videos */
+.gallery-item img,
+.gallery-item video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Estilizar los títulos */
+.gallery-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Centrar el modal */
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  max-height: 90%;
+}
 
 
 

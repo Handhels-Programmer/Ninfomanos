@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="Do">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Galería de Fotos y Videos</title>
-        <!-- Vinculamos el archivo de estilos CSS -->
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <!-- Filtros por tipo -->
-        <div class="filters">
-          <button data-filter="all" class="type-filter">Todos</button>
-          <button data-filter="foto" class="type-filter">Fotos</button>
-          <button data-filter="video" class="type-filter">Videos</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Multimedia</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <label for="artistFilter">Filtrar:</label>
+    <select id="artistFilter">
+      <option value="all">Todos</option>
+    </select>
+    <div class="gallery" id="gallery"></div>
+    <div id="fullscreen" class="fullscreen" style="display: none;">
+        <img id="fullscreenImg" style="display: none;">
+        <button id="closeFullscreenImg" class="close-btn">✖</button>
+        <div id="videoContainer" style="display: none;">
+            <video id="fullscreenVideo"></video>
+            <div class="controls">
+                <button id="playPause">▶</button>
+                <input type="range" id="seekBar" value="0" step="0.1">
+                <button id="muteToggle">🔊</button>
+                <button id="closeFullscreen">✖</button>
+            </div>
         </div>
-        
-        <!-- Filtro por artista -->
-        <div class="artist-filter">
-          <label for="artistSelect">Filtrar por artista:</label>
-          <select id="artistSelect">
-            <option value="all">Todos</option>
-            <option value="Artista A">Artista A</option>
-            <option value="Artista B">Artista B</option>
-            <option value="Artista C">Artista C</option>
-            <option value="Alexandra">Alexandra</option>
-          </select>
-        </div>
-      
-        <!-- Contenedor de la galería (se genera dinámicamente) -->
-        <div class="gallery-container" id="gallery"></div>
-
-        <!-- Modal para ampliar imágenes y reproducir videos -->
-<div id="mediaModal" class="modal">
-    <span class="close">&times;</span>
-    <div class="modal-content">
-      <img id="modalImage" class="modal-media" style="display: none;">
-      <video id="modalVideo" class="modal-media" controls style="display: none;"></video>
     </div>
-  </div>
-  
-      
-        <!-- Vinculamos el archivo JavaScript -->
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+  </body>
 </html>

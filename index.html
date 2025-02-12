@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería Estática</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
+<html lang="Do">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galería de Fotos y Videos</title>
+        <!-- Vinculamos el archivo de estilos CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Filtros por tipo -->
         <div class="filters">
-            <button data-folder="all">Todos</button>
-            <button data-folder="nature">Naturaleza</button>
-            <button data-folder="events">Eventos</button>
-            <button data-folder="anyi">Arte</button>
+          <button data-filter="all" class="type-filter">Todos</button>
+          <button data-filter="foto" class="type-filter">Fotos</button>
+          <button data-filter="video" class="type-filter">Videos</button>
         </div>
-        <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Buscar por nombre...">
+        
+        <!-- Filtro por artista -->
+        <div class="artist-filter">
+          <label for="artistSelect">Filtrar por artista:</label>
+          <select id="artistSelect">
+            <option value="all">Todos</option>
+            <option value="Artista A">Artista A</option>
+            <option value="Artista B">Artista B</option>
+            <option value="Artista C">Artista C</option>
+            <option value="Alexandra">Alexandra</option>
+          </select>
         </div>
-        <div class="gallery">
-            <!-- Items de ejemplo -->
-            <div class="gallery-item" data-folder="nature" data-name="Montaña Hermosa">
-                <img src="path/to/nature1.jpg" alt="Naturaleza 1">
-            </div>
-            <div class="gallery-item" data-folder="nature" data-name="Río Sereno">
-                <img src="path/to/nature2.jpg" alt="Naturaleza 2">
-            </div>
-            <div class="gallery-item" data-folder="events" data-name="Concierto al Aire Libre">
-                <img src="path/to/event1.jpg" alt="Evento 1">
-            </div>
-            <div class="gallery-item" data-folder="art" data-name="Pintura Abstracta">
-                <img src="path/to/art1.jpg" alt="Arte 1">
-            </div>
-            <div class="gallery-item" data-folder="art" data-name="2024-04-16 001">
-                <video src="https://res.cloudinary.com/programmer-app-web/video/upload/v1737919506/2024-04-16_001_o7gjqx.mp4"></video>
-            </div>
-        </div>
+      
+        <!-- Contenedor de la galería (se genera dinámicamente) -->
+        <div class="gallery-container" id="gallery"></div>
+
+        <!-- Modal para ampliar imágenes y reproducir videos -->
+<div id="mediaModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" class="modal-media" style="display: none;">
+      <video id="modalVideo" class="modal-media" controls style="display: none;"></video>
     </div>
-    <script src="script.js"></script>
-</body>
+  </div>
+  
+      
+        <!-- Vinculamos el archivo JavaScript -->
+        <script src="script.js"></script>
+    </body>
 </html>

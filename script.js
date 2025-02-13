@@ -11,25 +11,38 @@ const videoElement = document.getElementById("fullscreenVideo");
 const playPauseBtn = document.getElementById("playPause");
 const seekBar = document.getElementById("seekBar");
 const muteToggle = document.getElementById("muteToggle");
+const artistFilter = document.getElementById("artistFilter");
+
+const uniqueArtists = [...new Set(mediaFiles.map(media => media.artist))];
+uniqueArtists.forEach(artist => {
+    const option = document.createElement("option");
+    option.value = artist;
+    option.textContent = artist;
+    artistFilter.appendChild(option);
+});
+
+artistFilter.addEventListener("change", renderGallery);
 
 function renderGallery() {
   gallery.innerHTML = "";
-  mediaFiles.forEach(media => {
-      const item = document.createElement("div");
-      item.classList.add("item");
-      if (media.type === "foto") {
-          const img = document.createElement("img");
-          img.src = media.src;
-          item.appendChild(img);
-          img.addEventListener("click", () => openFullscreenImg(media.src));
-      } else if (media.type === "video") {
-          const video = document.createElement("video");
-          video.src = media.src;
-          item.appendChild(video);
-          video.addEventListener("click", () => openFullscreenVideo(media.src));
-      }
-      gallery.appendChild(item);
-  });
+  const selectedArtist = artistFilter.value;
+  mediaFiles.filter(media => selectedArtist === "all" || media.artist === selectedArtist)
+      .forEach(media => {
+          const item = document.createElement("div");
+          item.classList.add("item");
+          if (media.type === "foto") {
+              const img = document.createElement("img");
+              img.src = media.src;
+              item.appendChild(img);
+              img.addEventListener("click", () => openFullscreenImg(media.src));
+          } else if (media.type === "video") {
+              const video = document.createElement("video");
+              video.src = media.src;
+              item.appendChild(video);
+              video.addEventListener("click", () => openFullscreenVideo(media.src));
+          }
+          gallery.appendChild(item);
+      });
 }
 
 function openFullscreenImg(src) {

@@ -1,11 +1,14 @@
 const mediaFiles = [
   { name: '2021-05-08 002', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739376253/Alexandra/2021-05-08-002-h.jpg', artist: 'Alexandra' },
-  { name: '2024-02-27 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739986154/Amalfi/2024-02-27%20001.jpg', artist: 'Amalfi' },
+ // { name: '2024-02-27 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739986154/Amalfi/2024-02-27%20001.jpg', artist: 'Amalfi' },
   { name: '2020-01-10 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739376188/Alexandra/2020-01-10-001-h.mp4', artist: 'Alexandra' },
-  { name: '2024-04-23 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739986555/Amalfi/2024-04-23%20001.jpg', artist: 'Amalfi' },
-  { name: '2024-04-04 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739986302/Amalfi/2024-04-04%20001.mp4', artist: 'Amalfi' },
-  { name: '2024-04-17 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739986408/Amalfi/2024-04-17%20001.mp4', artist: 'Amalfi' }
+ // { name: '2024-04-23 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739986555/Amalfi/2024-04-23%20001.jpg', artist: 'Amalfi' },
+ // { name: '2024-04-04 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739986302/Amalfi/2024-04-04%20001.mp4', artist: 'Amalfi' },
+ // { name: '2024-04-17 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739986408/Amalfi/2024-04-17%20001.mp4', artist: 'Amalfi' }
 ];
+
+// { name: 'Nombre', type: 'foto', src: 'Link', artist: 'Actor' },
+ // { name: 'Nombre', type: 'video', src: 'Link', artist: 'Actor' },
 
 const gallery = document.getElementById("gallery");
 const videoElement = document.getElementById("fullscreenVideo");

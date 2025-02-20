@@ -101,7 +101,7 @@ document.getElementById("closeFullscreen").addEventListener("click", () => {
   videoElement.pause();
 });
 
-renderGallery();
+//renderGallery();
 
 
 function renderGallery() {

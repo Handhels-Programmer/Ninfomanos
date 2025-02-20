@@ -1,15 +1,33 @@
 const mediaFiles = [
-  { name: '2021-05-08 002', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739376253/Alexandra/2021-05-08-002-h.jpg', artist: 'Alexandra' },
- // { name: '2024-02-27 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739986154/Amalfi/2024-02-27%20001.jpg', artist: 'Amalfi' },
-  { name: '2020-01-10 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739376188/Alexandra/2020-01-10-001-h.mp4', artist: 'Alexandra' },
- // { name: '2024-04-23 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739986555/Amalfi/2024-04-23%20001.jpg', artist: 'Amalfi' },
- // { name: '2024-04-04 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739986302/Amalfi/2024-04-04%20001.mp4', artist: 'Amalfi' },
- // { name: '2024-04-17 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739986408/Amalfi/2024-04-17%20001.mp4', artist: 'Amalfi' },
+  //Alexandra
+  //<src=https://files.fm/thumb_video_picture.php?i=naadnga6ht" id="filesfm_embed_js__naadnga6ht"></script>
+  { name: '2022-06-11 001', type: 'foto', src: 'https://files.fm/thumb_show.php?i=v6d5qc8ex7', artist: 'Alexandra' },
+  { name: '2022-05-17 003', type: 'video', src: 'https://es.files.fm/pa/ninfomanosh/Alexandra/2022-05-17+003.mp4', artist: 'Alexandra' },
+
+  //Amalfis
+ // { name: '2024-02-27 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739986154/Amalfi/2024-02-27%20001.jpg', artist: 'Amalfis' },
+ // { name: '2024-04-23 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739986555/Amalfi/2024-04-23%20001.jpg', artist: 'Amalfis' },
+ // { name: '2024-04-04 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739986302/Amalfi/2024-04-04%20001.mp4', artist: 'Amalfis' },
+ // { name: '2024-04-17 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739986408/Amalfi/2024-04-17%20001.mp4', artist: 'Amalfis' },
+
+ //Anyeli
  { name: '2024-05-05 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739987686/Anyeli/2024-05-05%20001-h.jpg', artist: 'Anyeli' },
  { name: '2023-08-09 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739988918/Anyeli/2023-08-09%20001-h.mp4', artist: 'Anyeli' },
  { name: '2022-09-12 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739989030/Anyeli/2022-09-12%20001-h.mp4', artist: 'Anyeli' },
  { name: '2021-08-15 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739989124/Anyeli/2021-08-15%20001-h.mp4', artist: 'Anyeli' },
  { name: '2020-10-21 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739989368/Anyeli/2020-10-21%20001-h.mp4', artist: 'Anyeli' },
+
+ //Anyi
+ { name: '2024-07-03 001', type: 'foto', src: 'https://res.cloudinary.com/dkawifwra/image/upload/v1739990117/Anyi/2024-07-03%20001-h.jpg', artist: 'Anyi' },
+ { name: '2024-07-03 002', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739989598/Anyi/2024-07-03%20002-h.mp4', artist: 'Anyi' },
+ { name: '2024-04-16 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739990504/Anyi/2024-04-16%20001-h.mp4', artist: 'Anyi' },
+
+ //Ashley
+ { name: '2024-01-01 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739991861/Ashley/2024-01-01%20001-h.mp4', artist: 'Ashley' },
+
+ //Berenice
+ { name: '2023-11-18 001', type: 'video', src: 'https://res.cloudinary.com/dkawifwra/video/upload/v1739992565/Berenice/2023-11-18%20001-h.mp4', artist: 'Berenice' },
+
 ];
 
 // { name: 'Nombre', type: 'foto', src: 'Link', artist: 'Actor' },
